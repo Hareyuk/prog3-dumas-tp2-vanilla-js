@@ -1,0 +1,82 @@
+[
+    {
+      "lat": -34.606113,
+      "lng":  -58.375166,
+      "name": "PUNTO GAMER",
+      "description": "Tienda que vende artículos referentes a temáticas de videojuegos.",
+      "website": "http://puntogamer.com.ar/",
+      "type": "Articulos"
+    },
+    {
+      "lat": -34.623601,
+      "lng": -58.444354,
+      "name": "Magic Lair",
+      "description": "Compra y venta de cartas Magic, también las fabrican ellos mismos",
+      "website": "https://www.magiclair.com.ar/",
+      "type": "Cartas"
+    },
+    {
+      "lat": -34.595615,
+      "lng": -58.438826,
+      "name": "El ogro alegre",
+      "website": "#",
+      "description": "Tienda de artículos de fantasía temática Dungeon and Dragons",
+      "type": "Articulos"
+    },
+    {
+      "lat": -34.621342, 
+      "lng": -58.503723,
+      "name": "Planeta Games",
+      "website": "http://planetagames.com.ar/",
+      "description": "Venden articulos de videojuegos y tecnología como celulares",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.582907,
+      "lng": -58.446053,
+      "website": "https://www.hadriatica.com/",
+      "name": "Hadriatica",
+      "description": "Tienda de videojuegos y artículos de Nintendo y funkos",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.599394,
+      "lng": -58.4967732,
+      "website": "https://www.cdmarket.com.ar/",
+      "name": "CD Market Villa del Parque",
+      "description": "Venden cosas de electrónica gamer y de consolas de Sony, Nintendo y entre otros",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.594717,
+      "lng": -58.401887,
+      "name": "Gamersforever",
+      "website": "http://www.gamersforever.com.ar/",
+      "description": "Venden juegos de Nintendo y Sony, también discos duros",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.618189,
+      "lng": -58.435920,
+      "name": "CD Market Caballito",
+      "website": "https://www.cdmarket.com.ar/",
+      "description": "Venden cosas de electrónica gamer y de consolas de Sony, Nintendo y entre otros",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.585877, 
+      "lng": -58.427992,
+      "name": "xGaming!",
+      "website": "https://www.xgaming.com.ar/",
+      "description": "Tienda de accesorios gamers de PC",
+      "type": "Juegos"
+    },
+    {
+      "lat": -34.618950, 
+      "lng": -58.416547,
+      "name": "Magic4Ever",
+      "website": "http://www.magic4ever.com.ar/",
+      "description": "Tienda de cartas, principalmente YuGiOh, y se hacen torneos también",
+      "type": "Cartas"
+    }  
+  ]
