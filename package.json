@@ -1,7 +1,7 @@
 {
   "name": "prog3-dumas-tp2-vanilla",
   "version": "1.0.0",
-  "description": "",
+  "description": "TP para Programación Multimedial 3 de Tecnología Multimedial",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
