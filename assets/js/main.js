@@ -208,9 +208,3 @@ const changeIconNearest = (elementImg, parentDiv) => {
   parentDiv.classList.add("nearest");
 }
 */
-
-const button_add = document.querySelector(".add_place");
-button_add.addEventListener('click', function()
-{
-  
-});

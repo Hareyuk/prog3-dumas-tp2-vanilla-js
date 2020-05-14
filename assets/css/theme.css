@@ -86,22 +86,16 @@ body
     margin: 0.5em auto 0 auto;
 }
 
-#filters, .showNearest, .gm-style .gm-style-iw-t::after, .gm-style-iw, .gm-control-active, .add_place
+#filters, .showNearest, .gm-style .gm-style-iw-t::after, .gm-style-iw, .gm-control-active
 {    
     background: rgba(18, 0, 30, 0.5) !important;
 }
 
-.add_place
+.div_form
 {
-    position: fixed;
-    top: 0%;
-    left: 100%;
-    transform: translate(-100%,0);
-    border: none;
-    color: white;
-    font-size: 2.5em;
-    padding: 0.2em 0.5em;
-    border-radius: 0em 0 0 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 #filters{
