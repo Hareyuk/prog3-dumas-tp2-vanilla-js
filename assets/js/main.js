@@ -80,8 +80,11 @@ const changeClassButtons = (type) => {
     //Añado todos los markers de nuevo
     markersAll.forEach((markerItem) => markerItem.setMap(map));
     handleFilterGaming.classList.remove("not_selected");
+    handleFilterGaming.classList.remove("selected");
     handleFilterArticles.classList.remove("not_selected");
+    handleFilterArticles.classList.remove("selected");
     handleFilterCards.classList.remove("not_selected");
+    handleFilterCards.classList.remove("selected");
     lastFilterSelected = "";
   }
   else {
@@ -90,6 +93,7 @@ const changeClassButtons = (type) => {
     switch (type) {
       case "Juegos":
         handleFilterGaming.classList.remove("not_selected");
+        handleFilterGaming.classList.add("selected");
         handleFilterArticles.classList.add("not_selected");
         handleFilterCards.classList.add("not_selected");
         break;
@@ -97,17 +101,17 @@ const changeClassButtons = (type) => {
       case "Articulos":
         handleFilterGaming.classList.add("not_selected");
         handleFilterArticles.classList.remove("not_selected");
+        handleFilterArticles.classList.add("selected");
         handleFilterCards.classList.add("not_selected");
         break;
       case "Cartas":
         handleFilterGaming.classList.add("not_selected");
         handleFilterArticles.classList.add("not_selected");
         handleFilterCards.classList.remove("not_selected");
+        handleFilterCards.classList.add("selected");
         break;
       default:
-        handleFilterGaming.classList.add("not_selected");
-        handleFilterArticles.classList.add("not_selected");
-        handleFilterCards.classList.add("not_selected");
+        //Nothing
         break;
     }
   }
@@ -122,6 +126,7 @@ const fetchMarkers = async (map) => {
     json.forEach((marker) => {
       addMarker(map, marker);
     });
+    document.querySelector('.loading').classList.add("not_visible");
   } catch (error) {
     console.log(error);
   }
@@ -203,3 +208,9 @@ const changeIconNearest = (elementImg, parentDiv) => {
   parentDiv.classList.add("nearest");
 }
 */
+
+const button_add = document.querySelector(".add_place");
+button_add.addEventListener('click', function()
+{
+  
+});
