@@ -68,13 +68,30 @@ header li
     margin: 3em auto;
 }
 
-header li a, .addPlace
+header li a, .addPlace, .div_you_sure button
 {
     background-color: rgba(120, 0, 200, 0.75);
     padding: 1em;
     border-radius: 1em;
     width: 70%;
     transition: 0.2s ease-in-out;
+    border: none;
+}
+
+.div_you_sure div
+{
+    font-size: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div_you_sure button
+{
+    margin: 0.5em 0.5em 0 0.5em;
+    display: inline-block;
+    background-color: rgba(18, 0, 30, 0.5);
+    width: 30%;
 }
 
 header li a:hover, .addPlace:hover
@@ -133,6 +150,16 @@ h2
     left: 21.5%;
     top: 150px;
     border-collapse: collapse;
+}
+
+.table_list tr td:last-child, .table_list tr td:nth-last-child(2)
+{
+    text-align: center;
+}
+
+.table_list a
+{
+    text-decoration: none;
 }
 
 .table_list tr
@@ -200,7 +227,7 @@ input, textarea
     font-size: 2em;
 }
 
-.div_form
+.div_form, .div_you_sure
 {
     position: fixed;
     top: 0;
@@ -210,7 +237,7 @@ input, textarea
     height: 100%;
 }
 
-.div_form form
+.div_form form, .div_you_sure div
 {
     top: 50%;
     left: 50%;

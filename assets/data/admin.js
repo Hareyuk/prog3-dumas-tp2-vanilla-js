@@ -9,12 +9,13 @@ let inputWebsite = document.querySelector("#website");
 let inputType = document.querySelector("#type");
 let listObjPlaces = '';
 const divForm = document.querySelector('.div_form');
+const divAreSure = document.querySelector('.div_you_sure');
 
 const submitPlace = async ()=>
 {
     //Uploading place
     console.log("¡Subiendo datos!")
-
+    showTable();
     //Falta chequear que todos los campos tengan algún dato, y el LAT y LNG sean numéricos
 }
 
@@ -44,16 +45,19 @@ const showDivForm = ()=>
     }
 };
 
-const mainLogic = async ()=>
+const showTable = async ()=>
 {
     const url = "https://prog3-dumas-tp2-backend.now.sh/tiendajuegos";
     try {
+        let img = document.querySelector('img[alt="loading"]');
+        const table = document.querySelector('.table_list');
+        table.innerHTML = "";
+
+        img.classList.remove('hidden'); 
         const response = await fetch(url);
         const json = await response.json();
         listObjPlaces = json;
-        const table = document.querySelector('.table_list');
         const dataHTML = createTableHTML(json);
-        let img = document.querySelector('img[alt="loading"]');
         img.classList.add('hidden'); 
         table.innerHTML = dataHTML;
       } 
@@ -63,7 +67,7 @@ const mainLogic = async ()=>
 };
 
 
-mainLogic();
+showTable();
 
 const createTableHTML = (listObjs)=>
 {
@@ -78,6 +82,7 @@ const createTableHTML = (listObjs)=>
                 <td>${website}</td>
                 <td>${type}</td>
                 <td><a href='javascript:editInfo("${_id}");'><img src='assets/img/lapiz.svg'></a></td>
+                <td><a href='javascript:areSureDelete("${_id}");'>X</a></td>
             </tr>`;
     });
     return `<tr>
@@ -87,7 +92,8 @@ const createTableHTML = (listObjs)=>
         <th>descripción</th>
         <th>sitio web</th>
         <th>tipo</th>
-        <th></th>
+        <th>Editar</th>
+        <th>Borrar</th>
     </tr>
     ${txt}`;
 };
@@ -105,3 +111,14 @@ const editInfo = (_id)=>
     divForm.classList.remove('hidden');
     addingPlace = true;
 };
+
+const areSureDelete = (_id)=>
+{
+    divAreSure.innerHTML='<div><p>¿Está usted seguro que desea eliminar este elemento?</p><button id="yes_sure">Sí</button><br><button id="not_sure">No</button></div>';
+    divAreSure.classList.remove('hidden');
+    document.querySelector('#yes_sure').addEventListener('click', ()=> {
+        //Codigo para borrar elemento usando el URL con _id
+        console.info('Eliminado!');
+    });
+    document.querySelector('#not_sure').addEventListener('click', ()=> divAreSure.classList.add('hidden'));
+}
