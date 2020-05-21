@@ -261,7 +261,9 @@ form input, form textarea
     margin-bottom: 1em;
     border-radius: 5px;
     border: none;
+    padding: 0.3em;
 }
+
 
 form input:last-child
 {

@@ -45,19 +45,17 @@ const showDivForm = ()=>
     }
 };
 
-const showTable = async ()=>
+const getDataShops = async ()=>
 {
-    const url = "https://prog3-dumas-tp2-backend.now.sh/tiendajuegos";
     try {
         let img = document.querySelector('img[alt="loading"]');
         const table = document.querySelector('.table_list');
         table.innerHTML = "";
 
         img.classList.remove('hidden'); 
-        const response = await fetch(url);
-        const json = await response.json();
-        listObjPlaces = json;
-        const dataHTML = createTableHTML(json);
+        const results = await api.getTiendaJuegos();
+        listObjPlaces = results;
+        const dataHTML = createTableHTML(listObjPlaces);
         img.classList.add('hidden'); 
         table.innerHTML = dataHTML;
       } 
@@ -67,7 +65,7 @@ const showTable = async ()=>
 };
 
 
-showTable();
+getDataShops();
 
 const createTableHTML = (listObjs)=>
 {
@@ -81,7 +79,7 @@ const createTableHTML = (listObjs)=>
                 <td>${description}</td>
                 <td>${website}</td>
                 <td>${type}</td>
-                <td><a href='javascript:editInfo("${_id}");'><img src='assets/img/lapiz.svg'></a></td>
+                <td><a href='javascript:editInfo("${_id}");'><img src='../assets/img/lapiz.svg'></a></td>
                 <td><a href='javascript:areSureDelete("${_id}");'>X</a></td>
             </tr>`;
     });
