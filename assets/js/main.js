@@ -95,18 +95,24 @@ const changeClassButtons = (type) => {
         handleFilterGaming.classList.remove("not_selected");
         handleFilterGaming.classList.add("selected");
         handleFilterArticles.classList.add("not_selected");
+        handleFilterArticles.classList.remove("selected");
         handleFilterCards.classList.add("not_selected");
+        handleFilterCards.classList.remove("selected");
         break;
 
       case "Articulos":
         handleFilterGaming.classList.add("not_selected");
+        handleFilterGaming.classList.remove("selected");
         handleFilterArticles.classList.remove("not_selected");
         handleFilterArticles.classList.add("selected");
         handleFilterCards.classList.add("not_selected");
+        handleFilterCards.classList.remove("selected");
         break;
       case "Cartas":
         handleFilterGaming.classList.add("not_selected");
+        handleFilterGaming.classList.remove("selected");
         handleFilterArticles.classList.add("not_selected");
+        handleFilterArticles.classList.remove("selected");
         handleFilterCards.classList.remove("not_selected");
         handleFilterCards.classList.add("selected");
         break;

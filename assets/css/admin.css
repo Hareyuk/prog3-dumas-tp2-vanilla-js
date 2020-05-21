@@ -1,0 +1,244 @@
+*
+{
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+    color: white;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.background
+{
+    filter: brightness(0.6);
+    animation-name: movingBackground;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: initial;
+    background-image: url('../img/backgroundIcon.gif');
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    animation-duration: 10s;
+    top: 0;
+    left: 0;
+}
+
+@keyframes movingBackground
+{
+    0%
+    {
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
+
+    100%
+    {
+        background-position-x: 100px;
+        background-position-y: 100px;
+    }
+}
+
+.content
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header
+{
+    background-color: rgba(18, 0, 30, 0.8);
+    border-right: #39005F 0.8em solid;
+    width: 20.8%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+}
+
+header li
+{
+    display: block;
+    margin: 3em auto;
+}
+
+header li a, .addPlace
+{
+    background-color: rgba(120, 0, 200, 0.75);
+    padding: 1em;
+    border-radius: 1em;
+    width: 70%;
+    transition: 0.2s ease-in-out;
+}
+
+header li a:hover, .addPlace:hover
+{
+    background-color: rgba(140, 20, 220, 0.9);
+}
+
+
+header li a:active, .addPlace:active
+{
+    background-color: rgba(180, 60, 255, 0.9);
+}
+
+header p
+{
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+header a
+{
+    text-decoration: none;
+}
+
+h1
+{
+    font-size: 3em;
+    position: absolute;
+    left: 28%;
+    top: 30px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    position: absolute;
+    left: 28%;
+    top: 90px;
+    font-weight: normal;
+}
+
+.addPlace
+{
+    position: absolute;
+    top: 45px;
+    right: 7.5%;
+    width: 20%;
+    border: none;
+}
+
+.table_list
+{
+    width: 70.8%;
+    position: absolute;
+    overflow: auto;
+    left: 21.5%;
+    top: 150px;
+    border-collapse: collapse;
+}
+
+.table_list tr
+{
+    padding: 0.7em 0;
+    background-color: #39005F;
+}
+
+.table_list tr:nth-child(even) {
+    background-color: #5D118F;
+}
+
+.table_list td, .table_list th
+{
+    padding: 0.5em;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.table_list tr td:first-child, .table_list tr th:first-child
+{
+    border-left: none;
+}
+
+.table_list tr td:last-child, .table_list tr th:last-child
+{
+    border-right: none;
+}
+
+.table_list tr:first-child th
+{
+    border-top: none;
+}
+
+.table_list tr:last-child td
+{
+    border-bottom: none;
+}
+
+.table_list td img
+{
+    width: 20px;
+}
+
+img[alt="loading"]
+{
+    filter: contrast(0.8) brightness(10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input, textarea
+{
+    color: black;
+}
+
+.close_form
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.div_form
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(18, 0, 30, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.div_form form
+{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color: rgba(120, 0, 200, 0.75);
+    padding: 2em;
+    border-radius: 1em;
+    text-align: center;
+}
+
+form textarea
+{
+    height: 100px;
+}
+
+form input, form textarea
+{
+    width: 80%;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: none;
+}
+
+form input:last-child
+{
+    background-color: rgba(18, 0, 30, 0.5);
+    padding: 1em 2em;
+    color: white;
+}

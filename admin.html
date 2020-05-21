@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="assets/css/admin.css">
+        <title>GoogleMaps</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="assets/img/gaming_big.png">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="content">
+            <header>
+                <p>Menú</p>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" target="_blank">Regresar al sitio web</a></li>
+                        <li><a href="#">Cuenta</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <h1>¡Bienvenido!</h1>
+                <h2>Lista de las tiendas ingresadas hasta el momento:</h2>
+                <div>
+                    <button class='addPlace'>Agregar lugar</button>
+                    <table class="table_list"></table>
+                    <img src="assets/img/loading.gif" alt="loading">
+                </div>
+            </main>
+            <footer>
+
+            </footer>
+        </div>
+
+        <div class="background"></div>
+        
+        <div class='div_form hidden'>
+            <form action="javascript:submitPlace(); closeForm();">
+                <a href='javascript:closeForm()' class="close_form">X</a>
+                <label>Nombre del lugar: </label><br><input type="text" name="pname" id="pname"><br>
+                <label>lat: </label><br><input type="text" name="lat" id="lat"><br>
+                <label>lng: </label><br><input type="text" name="lng" id="lng"><br>
+                <label>Descripción del lugar (su temática y/o qué vende): </label><br><textarea id="txtarea_descr" id="desc" name="desc"></textarea><br>
+                <label>Sitio web (si no tiene escribir "#"): </label><br><input type="text" name="website" id="website"><br>
+                <label>Tipo: Articulos, Juegos o Cartas (respetar mayuscula y tildes): </label><br><input type="text" name="type" id="type">
+                <br>
+                <input type="submit" value="Añadir lugar" id="submit_place">
+            </form>
+        </div>	
+        <script src='assets/data/admin.js'></script>
+    </body>
+</html>
