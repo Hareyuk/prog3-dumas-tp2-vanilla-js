@@ -1,4 +1,5 @@
 const baseUrl = "https://prog3-dumas-tp2-backend.now.sh/";
+//const baseUrl = "http://localhost:3000/";
 
 const apiHeaders = {
     'Content-Type': 'application/json',
