@@ -39,14 +39,14 @@
         <div class="background"></div>
         
         <div class='div_form hidden'>
-            <form action="javascript:submitPlace(); closeForm();">
+            <form action="" id="form_main">
                 <a href='javascript:closeForm()' class="close_form">X</a>
-                <label>Nombre del lugar: </label><br><input type="text" name="pname" id="pname"><br>
-                <label>lat: </label><br><input type="text" name="lat" id="lat"><br>
-                <label>lng: </label><br><input type="text" name="lng" id="lng"><br>
-                <label>Descripción del lugar (su temática y/o qué vende): </label><br><textarea id="txtarea_descr" id="desc" name="desc"></textarea><br>
-                <label>Sitio web (si no tiene escribir "#"): </label><br><input type="text" name="website" id="website"><br>
-                <label>Tipo: Articulos, Juegos o Cartas (respetar mayuscula y tildes): </label><br><input type="text" name="type" id="type">
+                <label>Nombre del lugar: </label><br><input type="text" name="pname" id="main_form_name"><br>
+                <label>lat: </label><br><input type="text" name="lat" id="main_form_lat"><br>
+                <label>lng: </label><br><input type="text" name="lng" id="main_form_lng"><br>
+                <label>Descripción del lugar (su temática y/o qué vende): </label><br><textarea id="main_form_txtarea_descr" id="desc" name="desc"></textarea><br>
+                <label>Sitio web (si no tiene escribir "#"): </label><br><input type="text" name="website" id="main_form_website"><br>
+                <label>Tipo: Articulos, Juegos o Cartas (respetar mayuscula y tildes): </label><br><input type="text" name="type" id="main_form_type">
                 <br>
                 <input type="submit" value="Añadir lugar" id="submit_place">
             </form>
