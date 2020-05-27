@@ -19,7 +19,14 @@ const fetchParams = (method, data = '')=>
 
 const api = 
 {
-    //GET
+    //CREATE (para ver...)
+    createTiendaJuego: async formData => {
+        const dataResponse = await fetch(baseUrl + 'tiendaJuegos', fetchParams('POST', formData));
+        const dataInfo = await dataResponse.json();
+        return dataInfo;
+    },
+
+    //READ
     getTiendaJuegos: async()=>
     {
         const dataResponse = await fetch(baseUrl + 'tiendajuegos', fetchParams('GET'));
@@ -33,9 +40,12 @@ const api =
         const dataResponse = await fetch(baseUrl + 'tiendajuegos/' + id, fetchParams('DELETE'));
         const dataInfo = await dataResponse.json();
         return dataInfo;
+    },
+
+    //UPDATE
+    updateTiendaJuego: async (formData,id) => {
+        const dataResponse = await fetch(baseUrl + 'tiendajuegos/' + id, fetchParams('PUT', formData));
+        const dataInfo = await dataResponse.json();
+        return dataInfo;
     }
-
-    //PUT
-
-    //POST
 }
