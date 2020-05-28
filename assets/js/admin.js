@@ -112,10 +112,6 @@ const createTableHTML = (listObjs)=>
 const createTiendaJuego = async (data) => {
     const result = await api.createTiendaJuego(data);
     console.log('Created',result)
-    $formMain.reset();
-    closeForm();
-    getDataShops();
-
 }
 
 //DELETE
@@ -184,9 +180,6 @@ $formMain.addEventListener('submit', (event) => {
     {
         updateTiendaJuego(formData,id);
     }
-
-    //Chequear que si el id viene vacio es create, sino es update
-    //createCerveceria(formData)
 
     //Reseteo el form
     $formId.value = '';

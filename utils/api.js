@@ -19,7 +19,7 @@ const fetchParams = (method, data = '')=>
 
 const api = 
 {
-    //CREATE (para ver...)
+    //CREATE
     createTiendaJuego: async formData => {
         const dataResponse = await fetch(baseUrl + 'tiendajuegos', fetchParams('POST', formData));
         const dataInfo = await dataResponse.json();
