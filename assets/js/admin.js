@@ -141,7 +141,8 @@ const areSureDelete = (id)=>
     $divAreSure.classList.remove('hidden');
     document.querySelector('#yes_sure').addEventListener('click', ()=> {
         deleteTiendaJuego(id);
-
+        $divAreSure.innerHTML = "";
+        $divAreSure.classList.add('hidden');
         console.info('Eliminado!');
     });
     document.querySelector('#not_sure').addEventListener('click', ()=> $divAreSure.classList.add('hidden'));
@@ -155,36 +156,36 @@ const handleClickEdit = async () => {
 
 const updateTiendaJuego = async (data,id) => {
     const result = await api.updateTiendaJuego(data,id);
-    console.log('Updated', result)
-    getDataShops();
+    console.log('Updated', result);
 }
 
 //FORM (Update o Create)
 $formMain.addEventListener('submit', (event) => {
     event.preventDefault();
-    const id = $formId.value
-    const formData = {
-        "lat": $inputLat.value,
-        "lng": $inputLng.value,
-        "name": $inputName.value,
-        "description": $inputDesc.value,
-        "website": $inputWebsite.value,
-        "type": $inputType.value
-    }
-
-    if(id == "")
-    {
-        createTiendaJuego(formData);
-    }
-    else
-    {
-        updateTiendaJuego(formData,id);
-    }
-
-    //Reseteo el form
-    $formId.value = '';
-    $formMain.reset();
-    closeForm();
+        const id = $formId.value
+        const formData = {
+            "lat": $inputLat.value,
+            "lng": $inputLng.value,
+            "name": $inputName.value,
+            "description": $inputDesc.value,
+            "website": $inputWebsite.value,
+            "type": $inputType.value
+        }
+    
+        if(id == "")
+        {
+            createTiendaJuego(formData);
+        }
+        else
+        {
+            updateTiendaJuego(formData,id);
+        }
+    
+        //Reseteo el form
+        $formId.value = '';
+        $formMain.reset();
+        closeForm();
+        getDataShops();
 });
 
 
