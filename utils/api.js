@@ -21,7 +21,7 @@ const api =
 {
     //CREATE (para ver...)
     createTiendaJuego: async formData => {
-        const dataResponse = await fetch(baseUrl + 'tiendaJuegos', fetchParams('POST', formData));
+        const dataResponse = await fetch(baseUrl + 'tiendajuegos', fetchParams('POST', formData));
         const dataInfo = await dataResponse.json();
         return dataInfo;
     },

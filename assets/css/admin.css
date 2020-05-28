@@ -44,23 +44,37 @@
     }
 }
 
+body, html
+{
+    height: 100%;
+    width: 100%;
+}
+
 .content
 {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
 }
 
 header
 {
+    box-sizing: border-box;
     background-color: rgba(18, 0, 30, 0.8);
     border-right: #39005F 0.8em solid;
-    width: 20.8%;
-    height: 100%;
+    width: 20%;
+    height: 95%;
     top: 0;
     left: 0;
-    position: absolute;
     text-align: center;
     z-index: 1;
+}
+
+main
+{
+    height: 95%;
+    width: 80%;
 }
 
 header li
@@ -117,60 +131,79 @@ header a
     text-decoration: none;
 }
 
-h1
+.box_content h1
 {
     font-size: 3em;
-    position: absolute;
-    left: 28%;
-    top: 30px;
 }
 
-h2
+.box_content h2
 {
     font-size: 1.5em;
-    position: absolute;
-    left: 28%;
-    top: 90px;
     font-weight: normal;
 }
 
 .addPlace
 {
-    position: absolute;
-    top: 45px;
-    right: 7.5%;
-    width: 20%;
+    width: 25%;
+    margin-right: 3em;
     border: none;
+}
+
+.title_main
+{
+    padding: 1.5em 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(18, 0, 30, 0.8);
+}
+
+.title_main div:last-child
+{
+    width: 50%;
+    text-align: right;
+    align-self: center;
 }
 
 .box_content
 {
-    background-color: rgba(18, 0, 30, 0.8);
-    width: 100%;
+    width: 45%;
+    padding-left: 5%;
     height: 20%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .div_table
 {
-    overflow-y: auto;
-    height: 100vh;
-    z-index: -1;
-    margin-left: 25%;
-    width: 75%;
+    margin-left: 5em;
+    margin-top: 1em;
+    overflow-y: auto;   
+    width: 90%;
+    height: 80%;
 }
 
-.div_table::-webkit-scrollbar 
+
+.div_table::-webkit-scrollbar
 {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    width: 12px;
 }
+
+/* Track */
+.div_table::-webkit-scrollbar-track {
+    background: rgba(180, 60, 255, 0.9);
+  }
+
+  /* Handle */
+.div_table::-webkit-scrollbar-thumb {
+    background: rgba(18, 0, 30, 0.8)
+  }
+  
+  /* Handle on hover */
+  .div_table::-webkit-scrollbar-thumb:hover {
+    background: rgba(18, 0, 30, 0.5)
+  }
 
 .table_list
 {
-    margin-top: 15%;
     border-collapse: collapse;
 }
 
@@ -297,4 +330,31 @@ form input:last-child
 .cicklable
 {
     cursor: pointer;
+}
+
+footer
+{
+    display: flex;
+    width: 100%;
+    height: 5%;
+    background-color: rgba(140, 20, 220, 0.9);
+    align-items: center;
+}
+
+footer p
+{
+    z-index: 1;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 1480px) 
+{
+    .div_table
+    {
+        margin-left: 1em;
+        height: 75%;
+        width: 95%;
+        font-size: 0.8;
+    }    
 }

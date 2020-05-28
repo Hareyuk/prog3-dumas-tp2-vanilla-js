@@ -12,14 +12,6 @@ const $divForm = document.querySelector('.div_form');
 const $divAreSure = document.querySelector('.div_you_sure');
 let listObjPlaces = '';
 
-const submitPlace = async ()=>
-{
-    //Uploading place
-    console.log("¡Subiendo datos!")
-    closeForm();
-    showTable();
-}
-
 const closeForm =() =>
 {
     $divForm.classList.add('hidden');
@@ -83,8 +75,6 @@ const getDataShops = async ()=>
       }
 };
 
-getDataShops();
-
 const createTableHTML = (listObjs)=>
 {
     let txt = '';
@@ -118,11 +108,21 @@ const createTableHTML = (listObjs)=>
     ${txt}`;
 };
 
+//CREATE
+const createTiendaJuego = async (data) => {
+    const result = await api.createTiendaJuego(data);
+    console.log('Created',result)
+    $formMain.reset();
+    closeForm();
+    getDataShops();
+
+}
+
 //DELETE
 
 const handleClickDelete = async () => {
     const id = event.target.dataset.id;
-    deleteCerveceria(id);
+    areSureDelete(id);
 }
 
 const deleteTiendaJuego = async (_id)=>
@@ -139,16 +139,16 @@ const deleteTiendaJuego = async (_id)=>
     }
 }
 
-const areSureDelete = (_id)=>
+const areSureDelete = (id)=>
 {
-    divAreSure.innerHTML='<div><p>¿Está usted seguro que desea eliminar este elemento?</p><button id="yes_sure">Sí</button><br><button id="not_sure">No</button></div>';
-    divAreSure.classList.remove('hidden');
+    $divAreSure.innerHTML='<div><p>¿Está usted seguro que desea eliminar este elemento?</p><button class="cicklable" id="yes_sure">Sí</button><br><button id="not_sure" class="cicklable">No</button></div>';
+    $divAreSure.classList.remove('hidden');
     document.querySelector('#yes_sure').addEventListener('click', ()=> {
-        deleteTiendaJuego(_id);
+        deleteTiendaJuego(id);
 
         console.info('Eliminado!');
     });
-    document.querySelector('#not_sure').addEventListener('click', ()=> divAreSure.classList.add('hidden'));
+    document.querySelector('#not_sure').addEventListener('click', ()=> $divAreSure.classList.add('hidden'));
 };
 
 //UPDATE
@@ -175,7 +175,15 @@ $formMain.addEventListener('submit', (event) => {
         "website": $inputWebsite.value,
         "type": $inputType.value
     }
-    updateTiendaJuego(formData,id);
+
+    if(id == "")
+    {
+        createTiendaJuego(formData);
+    }
+    else
+    {
+        updateTiendaJuego(formData,id);
+    }
 
     //Chequear que si el id viene vacio es create, sino es update
     //createCerveceria(formData)
@@ -184,4 +192,8 @@ $formMain.addEventListener('submit', (event) => {
     $formId.value = '';
     $formMain.reset();
     closeForm();
-})
+});
+
+
+//AUTOMATIC CODE WHEN LOAD
+getDataShops();

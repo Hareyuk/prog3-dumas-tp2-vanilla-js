@@ -23,20 +23,22 @@
             </header>
 
             <main>
-                <div class='box_content'>
-                    <h1>¡Bienvenido!</h1>
-                    <h2>Lista de las tiendas ingresadas hasta el momento:</h2>
-                    <button class='addPlace cicklable'>Agregar lugar</button>
+                <div class="title_main">
+                    <div class='box_content'>
+                        <h1>¡Bienvenido!</h1>
+                        <h2>Lista de las tiendas ingresadas hasta el momento:</h2>
+                    </div>
+                    <div><button class='addPlace cicklable'>Agregar lugar</button></div>
                 </div>
-                <div>
-                    <div class="div_table">
+                <div class="div_table">
+                    <div>
                         <table class="table_list"></table>
                     </div>
                     <img src="../assets/img/loading.gif" alt="loading">
                 </div>
             </main>
             <footer>
-
+                <p>Desarrollado por: Axel Julian Dumas Cutuli - Programación Multimedial 3 - Universidad Maimónides</p>
             </footer>
         </div>
 
@@ -52,7 +54,7 @@
                 <label>Sitio web (si no tiene escribir "#"): </label><br><input type="text" name="website" id="main_form_website" required><br>
                 <label>Tipo: Articulos, Juegos o Cartas (respetar mayuscula y tildes): </label><br><input type="text" name="type" id="main_form_type" required>
                 <br>
-                <input type="hidden" name="id" id="main_form_id" required>
+                <input type="hidden" name="id" id="main_form_id" value="">
                 <input type="submit" value="Añadir lugar" id="submit_place">
             </form>
         </div>	
