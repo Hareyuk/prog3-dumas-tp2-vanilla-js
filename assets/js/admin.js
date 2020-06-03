@@ -52,10 +52,18 @@ const getDataShops = async ()=>
         let img = document.querySelector('img[alt="loading"]');
         const table = document.querySelector('.table_list');
         table.innerHTML = "";
-
         img.classList.remove('hidden'); 
         const results = await api.getTiendaJuegos();
         listObjPlaces = results;
+        listObjPlaces.sort((a,b)=>{
+            if (a.name > b.name) {
+                return 1;
+              }
+              if (a.name < b.name) {
+                return -1;
+              }
+              return 0;
+        });
         const dataHTML = createTableHTML(listObjPlaces);
         img.classList.add('hidden'); 
         table.innerHTML = dataHTML;
@@ -162,6 +170,8 @@ const updateTiendaJuego = async (data,id) => {
 //FORM (Update o Create)
 $formMain.addEventListener('submit', (event) => {
     event.preventDefault();
+    if(formIsValid())
+    {
         const id = $formId.value
         const formData = {
             "lat": $inputLat.value,
@@ -172,6 +182,7 @@ $formMain.addEventListener('submit', (event) => {
             "type": $inputType.value
         }
     
+        closeForm();
         if(id == "")
         {
             createTiendaJuego(formData);
@@ -180,14 +191,75 @@ $formMain.addEventListener('submit', (event) => {
         {
             updateTiendaJuego(formData,id);
         }
-    
         //Reseteo el form
         $formId.value = '';
         $formMain.reset();
-        closeForm();
         getDataShops();
+    }
 });
 
+const formIsValid = ()=>
+{
+    let boolean = true;
+    const valueLat = $inputLat.value.trim();
+    const valueLng = $inputLng.value.trim();
+    const valueName = $inputName.value.trim();
+    const valueDescription = $inputDesc.value.trim();
+    const valueWebsite = $inputWebsite.value.trim();
+    const valueType = $inputType.value.trim();
+    let textAlert = "";
+    if(isNaN(valueLat))
+    {
+        valueLat = replaceComaToDot(valueLat);
+        textAlert += "El valor ingresado en LAT es inválido.\n";
+        boolean = false;
+    }
+
+    if(isNaN(valueLng))
+    {
+        boolean = false;
+        valueLng = replaceComaToDot(valueLat);
+        textAlert += "El valor ingresado en LNG es inválido.\n";
+    }
+
+    if(valueName.length == 0)
+    {
+        boolean = false;
+        textAlert += "El campo del nombre está vacío\n";
+    }
+
+    if(valueDescription.length == 0)
+    {
+        boolean = false;
+        textAlert += "El campo de la descripción está vacío\n";
+    }
+
+    if(valueWebsite == "")
+    {
+        boolean = false;
+        textAlert += "El campo del sitio web está vacío. Si no tiene, ingresar \"#\"\n";
+    }
+
+    if(valueType != "Juegos" && valueType == "Articulos" && valueType == "Cartas")
+    {
+        boolean = false;
+        textAlert += "El campo del tipo de tienda no es correcta. Ingresar \"Articulos\", \"Juegos\" o \"Cartas\" (respetando las mayúsculsa, minúsculas y sin tildes)";
+    }
+    
+    if(!boolean) alert(textAlert);
+
+    return boolean;
+}
+
+const replaceComaToDot = (text)=>
+{
+    const posComa = text.indexOf(",");
+    if(posComa > -1)
+    {   
+        text = text.replace(",",".");
+    }
+    return text;
+}
 
 //AUTOMATIC CODE WHEN LOAD
 getDataShops();

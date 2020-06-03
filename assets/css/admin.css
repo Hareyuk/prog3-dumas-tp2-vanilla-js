@@ -107,6 +107,13 @@ header li a, .addPlace, .div_you_sure button
     display: inline-block;
     background-color: rgba(18, 0, 30, 0.5);
     width: 30%;
+    transition: 0.2 ease-in-out ;
+}
+
+.div_you_sure button:hover
+{
+    background-color: rgba(40, 5, 80, 0.5);
+    transform: scale(1.1);
 }
 
 header li a:hover, .addPlace:hover
@@ -210,6 +217,7 @@ header a
 .table_list tr td:last-child, .table_list tr td:nth-last-child(2)
 {
     text-align: center;
+    border-right: none;
 }
 
 .table_list a
@@ -227,6 +235,11 @@ header a
     background-color: #5D118F;
 }
 
+.table_list tr:hover
+{
+    background-color: rgb(140, 20, 220);
+}
+
 .table_list td, .table_list th
 {
     padding: 0.5em;
@@ -238,11 +251,6 @@ header a
     border-left: none;
 }
 
-.table_list tr td:last-child, .table_list tr th:last-child
-{
-    border-right: none;
-}
-
 .table_list tr:first-child th
 {
     border-top: none;
@@ -251,11 +259,6 @@ header a
 .table_list tr:last-child td
 {
     border-bottom: none;
-}
-
-.table_list td img
-{
-    width: 20px;
 }
 
 img[alt="loading"]
@@ -328,6 +331,12 @@ form input:last-child
     color: white;
 }
 
+form input:last-child:hover
+{
+    background-color: rgba(40, 5, 80, 0.5);
+    transform: scale(1.1);
+}
+
 .cicklable
 {
     cursor: pointer;
@@ -347,6 +356,28 @@ footer p
     z-index: 1;
     margin: 0 auto;
 }
+
+.table_list td img:hover
+{
+    transform: scale(1.1);
+}
+
+.table_list tr td:last-child a
+{
+    padding: 1em;
+}
+
+.table_list td img
+{
+    width: 20px;
+    padding: 0.5em;
+}
+
+.table_list td:nth-last-child(2)
+{
+    padding: 0;
+}
+
 
 
 @media only screen and (max-width: 1480px) 
